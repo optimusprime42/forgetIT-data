@@ -1,0 +1,5 @@
+/*C2*/SET SCHEMA PUBLIC
+INSERT INTO ENTITY VALUES(6,NULL,'Hello, I am number one!',NULL,NULL,NULL,'TestEntityNumberOne',NULL)
+COMMIT
+INSERT INTO ENTITY VALUES(7,NULL,'Hello, I am number two!',NULL,NULL,NULL,'TestEntityNumberTwo',NULL)
+COMMIT
