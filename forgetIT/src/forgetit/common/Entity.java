@@ -135,4 +135,9 @@ public class Entity {
 		this.category = category;
 	}
 
+	private void setId(int id) {
+
+		this.id = id;
+	}
+
 }

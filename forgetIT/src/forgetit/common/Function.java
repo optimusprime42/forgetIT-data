@@ -38,4 +38,14 @@ public class Function {
 		return 0;
 	}
 
+	public void setId(int id) {
+
+		this.id = id;
+	}
+
+	public int getId() {
+
+		return id;
+	}
+
 }

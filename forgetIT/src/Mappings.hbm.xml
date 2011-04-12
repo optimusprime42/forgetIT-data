@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+
+	<typedef name="statusType" class="forgetit.common.Status">
+		<param name="enumStatus">forgetit.common.Status</param>
+		<param name="identifierMethod">getId</param>
+	</typedef>
+
+	<typedef name="categoryType" class="forgetit.common.Category">
+		<param name="enumCategory">forgetit.common.Category</param>
+		<param name="identifierMethod">getId</param>
+	</typedef>
+
+	<class name="forgetit.common.Entity" table="Entity">
+		<id name="id" column="id">
+			<generator class="increment" />
+		</id>
+		<property name="title" />
+		<property name="description" />
+		<property name="status" type="statusType" />
+		<one-to-one name="priority" />
+		<property name="startDate" />
+		<property name="endDate" />
+		<list name="tags" table="assignment">
+			<key column="entity_id" />
+			<index column="idx" />
+			<many-to-many column="tag_id" class="forgetit.common.Tag" />
+		</list>
+		<list name="dependencies" table="dependence">
+			<key column="entity_id" />
+			<index column="idx" />
+			<many-to-many column="dependens_on_entity_id" class="forgetit.common.Entity" />
+		</list>
+		<property name="category" type="categoryType" />
+	</class>
+
+	<class name="forgetit.common.Function">
+		<id name="id" column="id">
+			<generator class="increment" />
+		</id>
+		<map name="coefficients">
+			<key column="entity_id" />
+			<index column="idx" type="integer" />
+			<element type="integer" />
+		</map>
+	</class>
+
+	<class name="forgetit.common.Tag">
+		<id name="id" column="id">
+			<generator class="increment" />
+		</id>
+		<property name="name" />
+		<property name="description" />
+
+	</class>
+</hibernate-mapping>
