@@ -25,18 +25,18 @@ public class Tag {
 
 	public Tag(int id) {
 
-		this.setId(id);
+		this.id = id;
 	}
 
 	public Tag(int id, String name) {
 
-		this.setId(id);
+		this.id = id;
 		this.name = name;
 	}
 
 	public Tag(int id, String name, String description) {
 
-		this.setId(id);
+		this.id = id;
 		this.name = name;
 		this.description = description;
 	}
@@ -64,11 +64,6 @@ public class Tag {
 	public int getId() {
 
 		return id;
-	}
-
-	private void setId(int id) {
-
-		this.id = id;
 	}
 
 }

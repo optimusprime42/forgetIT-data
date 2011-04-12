@@ -28,7 +28,10 @@
         <property name="hibernate.current_session_context_class">org.hibernate.context.ThreadLocalSessionContext</property>
         <!-- <mapping resource="de/laliluna/example/Honey.hbm.xml" /> -->
 	   <property name="hibernate.transaction.flush_before_completion">true</property>
-	   <mapping resource="Mappings.hbm.xml"/>
+	   <mapping class="de.laliluna.example.Honey" />
+        <mapping class="forgetit.common.Entity" />
+        <mapping class="forgetit.common.Function" />
+        <mapping class="forgetit.common.Tag" />
          
   </session-factory>
 </hibernate-configuration>
