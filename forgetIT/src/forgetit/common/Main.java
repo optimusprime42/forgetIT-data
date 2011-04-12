@@ -1,6 +1,6 @@
 package forgetit.common;
 
-import forgetit.db.DBNoteHandler;
+import forgetit.db.DBEntityHandler;
 
 
 public class Main {
@@ -14,19 +14,14 @@ public class Main {
 		// new MainWindow(display);
 		// display.dispose();
 
-		DBNoteHandler handler = new DBNoteHandler();
+		DBEntityHandler handler = new DBEntityHandler();
 		
-		Entity entityOne = new Entity();
-		entityOne.setDescription("Hello, I am number one!");
-		entityOne.setTitle("TestEntityNumberOne");
-		handler.addNote(entityOne);
+		/*Entity entityOne = new Entity();
+		entityOne.setDescription("Hello there!");
+		entityOne.setTitle("SomeTestEntity");
+		handler.addEntity(entityOne);*/
 		
-		Entity entityTwo = new Entity();
-		entityTwo.setDescription("Hello, I am number two!");
-		entityTwo.setTitle("TestEntityNumberTwo");
-		handler.addNote(entityTwo);
-		
-		handler.listNotes();
+		handler.listEntities();
 		
 	
 		

@@ -21,14 +21,11 @@
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
 
-       <!-- Update schema if tables don't exist --> 
-       <!--<property name="hibernate.hbm2ddl.auto">update</property>-->
+       <!-- Validates DB schema while createing the SessionFactory --> 
 	  <property name="hibernate.hbm2ddl.auto">validate</property>
 	  
         <!-- <mapping resource="Keyword.hbm.xml"/>  -->
         <property name="hibernate.current_session_context_class">org.hibernate.context.ThreadLocalSessionContext</property>
-	  <!--This seems just to be the short version of "thread". Only possible value, because session uses a standalone DB.-->
-	    <!--<property name = "current_session_context_class">thread</property>-->
         <!-- <mapping resource="de/laliluna/example/Honey.hbm.xml" /> -->
 	   <property name="hibernate.transaction.flush_before_completion">true</property>
 	   <mapping class="de.laliluna.example.Honey" />
