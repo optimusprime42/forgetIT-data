@@ -1,8 +1,8 @@
 package forgetit.logic.note;
 
 import forgetit.common.Entity;
-import forgetit.db.DBNoteHandler;
-import forgetit.db.IDBNote;
+import forgetit.db.DBEntityHandler;
+import forgetit.db.IDBEntity;
 import forgetit.logic.interfaces.ILogicInternalNote;
 
 /**
@@ -14,29 +14,29 @@ import forgetit.logic.interfaces.ILogicInternalNote;
  */
 public class LogicNoteInternal implements ILogicInternalNote{
 	
-	private IDBNote dbNote;
+	private IDBEntity dbNote;
 	
 	public LogicNoteInternal(){
-		dbNote = new DBNoteHandler();
+		dbNote = new DBEntityHandler();
 	}
 
 	@Override
 	public void addNote(Entity note) {
 		//TODO add check input
-		dbNote.addNote(note);
+		dbNote.addEntity(note);
 	}
 
 	@Override
 	public void deleteNode(Entity note) {
 		//TODO check input
-		dbNote.deleteNode(note);
+		dbNote.deleteEntity(note);
 		
 	}
 
 	@Override
 	public void changeNote(Entity note) {
 		//TODO check input
-		dbNote.changeNote(note);
+		dbNote.editEntity(note);
 		
 	}
 

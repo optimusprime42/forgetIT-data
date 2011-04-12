@@ -9,10 +9,10 @@ public class DBNoteHandlerTest {
 	@Test
 	public void testAddNote() {
 
-		DBNoteHandler handler = new DBNoteHandler();
+		DBEntityHandler handler = new DBEntityHandler();
 		Entity entity = new Entity();
 		entity.setDescription("Test");
 		entity.setTitle("Test");
-		handler.addNote(entity);
+		handler.addEntity(entity);
 	}
 }

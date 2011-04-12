@@ -1,6 +1,13 @@
 package forgetit.common;
 
-import forgetit.db.DBNoteHandler;
+import java.util.Iterator;
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import forgetit.db.DBEntityHandler;
+import forgetit.db.DBEntityProvider;
 
 
 public class Main {
@@ -14,22 +21,26 @@ public class Main {
 		// new MainWindow(display);
 		// display.dispose();
 
-		DBNoteHandler handler = new DBNoteHandler();
+		DBEntityHandler handler = new DBEntityHandler();
+		DBEntityProvider provider = new DBEntityProvider();
 		
+		/*
+		 * // Add a example tuple to the databse
 		Entity entityOne = new Entity();
-		entityOne.setDescription("Hello, I am number one!");
-		entityOne.setTitle("TestEntityNumberOne");
-		handler.addNote(entityOne);
+		entityOne.setDescription("Hello there!");
+		entityOne.setTitle("SomeTestEntity");
+		handler.addEntity(entityOne);
+		*/
 		
-		Entity entityTwo = new Entity();
-		entityTwo.setDescription("Hello, I am number two!");
-		entityTwo.setTitle("TestEntityNumberTwo");
-		handler.addNote(entityTwo);
-		
-		handler.listNotes();
-		
-	
-		
+		// Get all entities from the database and also list them
+		List<Entity> entities = provider.getEntities();
+		for (Iterator<Entity> iter = entities.iterator(); iter.hasNext();) {
+			Entity element = (Entity) iter.next();
+			System.out.println(element);
+			System.out.println(element.getId());
+			System.out.println(element.getTitle());
+			System.out.println(element.getDescription());
+		}
 		
 	}
 }
