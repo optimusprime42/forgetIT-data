@@ -29,8 +29,6 @@ public class Entity {
 	private String description;
 
 	private Status status;
-
-	@ManyToOne
 	private Function priority;
 	private GregorianCalendar startDate;
 	private GregorianCalendar endDate;

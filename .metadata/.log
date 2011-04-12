@@ -1,0 +1,33 @@
+!SESSION 2011-04-12 17:34:37.732 -----------------------------------------------
+eclipse.buildId=M20110210-1200
+java.version=1.6.0_20
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=de_DE
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product /home/tk/workspace /home/tk/Programme/eclipse/eclipse -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -data /home/tk/workspace/ForgetIT/forgetIT-data /home/tk/workspace /home/tk/Programme/eclipse/eclipse -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jdt.core 4 4 2011-04-12 17:36:47.513
+!MESSAGE JavaBuilder handling CoreException while building: forgetIT
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/org.eclipse.swt' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:326)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:200)
+	at org.eclipse.core.internal.resources.Project.checkAccessible(Project.java:134)
+	at org.eclipse.core.internal.resources.Project.getDescription(Project.java:379)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.hasJavaBuilder(JavaBuilder.java:551)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.isWorthBuilding(JavaBuilder.java:685)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:169)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:629)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:172)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:203)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:255)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:258)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:311)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:343)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:242)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2011-04-12 17:36:47.520
+!MESSAGE Resource '/org.eclipse.swt' does not exist.

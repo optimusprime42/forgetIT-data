@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+
+	<class name="forgetit.common.Entity" table="Entity">
+		<id name="id" column="id">
+			<generator class="increment" />
+		</id>
+		<property name="title" />
+		<property name="descrpition" />
+		<one-to-one name="status" />
+		<one-to-one name="priority" />
+		<property name="startDate" />
+		<property name="endDate" />
+		<list name="tags" table="assignment">
+			<key column="entity_id" />
+			<index column="idx" />
+			<many-to-many column="tag_id" class="forgetit.common.Tag" />
+		</list>
+		<list name="dependencies" table="dependence">
+			<key column="entity_id" />
+			<index column="idx" />
+			<many-to-many column="dependens_on_entity_id" class="forgetit.common.Entity" />
+		</list>
+		<one-to-one name="category" />
+	</class>
+
+</hibernate-mapping>
