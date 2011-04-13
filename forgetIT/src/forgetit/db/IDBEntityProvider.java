@@ -47,4 +47,7 @@ public interface IDBEntityProvider {
 	 * @return all notes tagged with the given tags
 	 */
 	public List<Entity> getEntities(List<Tag> tags);
+
+
+
 }

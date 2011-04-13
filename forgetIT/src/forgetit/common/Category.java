@@ -1,6 +1,7 @@
 package forgetit.common;
 
 public enum Category {
-	TODO, NOTE, APPOINTMENT
-
+	APPOINTMENT,
+	NOTE,
+	TODO;
 }

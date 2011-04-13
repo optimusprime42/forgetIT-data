@@ -1,14 +1,18 @@
 package forgetit.common;
 
-import java.util.Iterator;
 import java.util.List;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import forgetit.db.DBEntityHandler;
 import forgetit.db.DBEntityProvider;
-
+import forgetit.gui.GraphicsController;
+import forgetit.logic.Calendar;
+import forgetit.logic.ILogicEntity;
+import forgetit.logic.ILogicEntityProvider;
+import forgetit.logic.ILogicTags;
+import forgetit.logic.LogicEntity;
+import forgetit.logic.LogicEntityProvider;
+import forgetit.logic.LogicTags;
+import forgetit.logic.interfaces.ICalendar;
 
 public class Main {
 
@@ -16,31 +20,20 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-
-		// Display display = new Display();
-		// new MainWindow(display);
-		// display.dispose();
-
-		DBEntityHandler handler = new DBEntityHandler();
-		DBEntityProvider provider = new DBEntityProvider();
+		
 		
 		/*
-		 * // Add a example tuple to the databse
-		Entity entityOne = new Entity();
-		entityOne.setDescription("Hello there!");
-		entityOne.setTitle("SomeTestEntity");
-		handler.addEntity(entityOne);
-		*/
+		// Uncomment this to test the database
+		DBEntityHandler handler = new DBEntityHandler();
+		DBEntityProvider provider = new DBEntityProvider();
+		List<Entity> entities = provider.getEntities();*/
 		
-		// Get all entities from the database and also list them
-		List<Entity> entities = provider.getEntities();
-		for (Iterator<Entity> iter = entities.iterator(); iter.hasNext();) {
-			Entity element = (Entity) iter.next();
-			System.out.println(element);
-			System.out.println(element.getId());
-			System.out.println(element.getTitle());
-			System.out.println(element.getDescription());
-		}
 		
+		ICalendar cal = new Calendar();
+		ILogicTags lt = new LogicTags();
+		ILogicEntity ln = new LogicEntity();
+		ILogicEntityProvider lnProvider = new LogicEntityProvider();
+		GraphicsController gui = new GraphicsController(lt, ln, lnProvider, cal);
+		gui.waitForDispose();
 	}
 }
